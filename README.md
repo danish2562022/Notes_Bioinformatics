@@ -1,5 +1,4 @@
 # Notes_Bioinformatics
 
-
-<b>DESEQ2 pipeline:</b> [I'm an inline-style link](https://www.google.com)
-http://master.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html
+## Differential Expression Analysis
+<b>DESEQ2 pipeline:</b> http://master.bioconductor.org/packages/release/workflows/vignettes/rnaseqGene/inst/doc/rnaseqGene.html
