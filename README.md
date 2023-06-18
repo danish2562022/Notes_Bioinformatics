@@ -1,5 +1,6 @@
 # Notes_Bioinformatics
-
+## All Bioinformatics tool with purpose descriptions
+https://biocorecrg.github.io/CRG_Bioinformatics_for_Biologists_2021/genomes.html
 ## Bioinformatics tool practices
 https://khushbupatel.notion.site/Bioinformatics-Starter-Pack-ae982892a9fb44569f735abc52ec9dd8
 ## Differential Expression Analysis
