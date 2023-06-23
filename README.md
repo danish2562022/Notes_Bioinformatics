@@ -13,3 +13,5 @@ https://khushbupatel.notion.site/Bioinformatics-Starter-Pack-ae982892a9fb44569f7
 
  ## Computational Biology
  <b>More on Metabolic Networks:</b> https://www.youtube.com/watch?v=aI4xR32gJBQ&list=PLyqSpQzTE6M88xI8FIcKarSBN2yPqMKbd&index=83&ab_channel=NPTEL-NOCIITM
+
+ <b>Computational Biology:</b>  https://www.youtube.com/watch?v=sX4cMu9Azgs&list=PLypiXJdtIca6GBQwDTo4bIEDV8F4RcAgt&ab_channel=ManolisKellis
