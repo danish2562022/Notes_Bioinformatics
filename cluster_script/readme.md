@@ -9,7 +9,10 @@ jupyter notebook --no-browser --port=8888
 
 ssh -N -L localhost:8888:localhost:8888 anwer@vera1.c3se.chalmers.se 
 ```
-
+### **Interactive Session**
+```
+srun -A C3SE2024-1-20 -p vera -t 14:20:00 -C MEM96 --mem-per-cpu=96G --pty bash
+```
 ### **Jupyter connect from computing node**
 
 1) Connect to Alvis:
