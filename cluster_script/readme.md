@@ -53,7 +53,7 @@ srun -A C3SE2024-1-20 -p vera -t 14:20:00 -C MEM96 --mem-per-cpu=96G --pty bash
 
 6) We need to start Jupyter notebook, issue this:
 ```
-	jupyter notebook
+	jupyter notebook --no-browser --port=8888
 ```
 
 7) See carefully what is printed out from jupyter. You need to find out 1) the port and 2) the token. It will output in the end something like this:
@@ -68,13 +68,13 @@ srun -A C3SE2024-1-20 -p vera -t 14:20:00 -C MEM96 --mem-per-cpu=96G --pty bash
 
 	8a) Node to Alvis: 
 
-	open new terminal from your computer and connect to alvis, then do this: ssh -L 8888:localhost:8888 user-name@alvisX-X
+	open new terminal from your computer and connect to alvis, then do this: ssh -N -L 8888:localhost:8888 user-name@alvisX-X
 
 	8b) Alvis to your computer:
 
 	open a new terminal from your computer and do:
     ```
-	ssh -L 6543:localhost:8888 user-name@alvis2.c3se.chalmers.se (6543 is an arbitrary port that you can change)
+	ssh -N -L 6543:localhost:8888 user-name@alvis2.c3se.chalmers.se (6543 is an arbitrary port that you can change)
     ```
 9) Get Jupyter notebook on your screen:
 
@@ -88,7 +88,7 @@ srun -A C3SE2024-1-20 -p vera -t 14:20:00 -C MEM96 --mem-per-cpu=96G --pty bash
 
 INFO: You need to be in Chalmers network for this work. You can try it at home if you want, but you have to ssh to Alvis via OX and open an aditional port to your local machine (basicaly repeat 8b with correct ports)
 
-Credit for this: Nikolaos Tatrakis https://www.sysbio.se/people/nikolaos-tatarakis/ 
+Credit for this: Nikolaos Tatarakis https://www.sysbio.se/people/nikolaos-tatarakis/ 
 
 
 
