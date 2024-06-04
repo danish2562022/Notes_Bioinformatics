@@ -7,4 +7,3 @@
 ```
 singularity build --fakeroot netzoopy_r.sif netzoopy.def
 ```
-´
