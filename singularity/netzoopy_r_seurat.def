@@ -1,0 +1,46 @@
+Bootstrap: docker
+
+From: continuumio/miniconda3
+
+%files
+    environment.yml
+
+%post
+    apt-get update -y
+    apt-get install build-essential -y
+    apt-get install make -y
+    apt install nano -y
+    apt-get install -y libopenblas-dev r-base-core libcurl4-openssl-dev libopenmpi-dev openmpi-bin openmpi-common openmpi-doc openssh-client openssh-server libssh-dev wget vim git nano git cmake  gfortran g++ curl wget autoconf bzip2 libtool libtool-bin
+    apt-get -y install libcurl4-gnutls-dev libxml2-dev libssl-dev
+    apt-get clean
+    /opt/conda/bin/conda env create -f environment.yml
+    echo ". /opt/conda/etc/profile.d/conda.sh" >> /etc/bash.bashrc
+    echo "conda activate $(head -n 1 environment.yml | cut -f 2 -d ' ')" >> /etc/bash.bashrc
+    . /opt/conda/etc/profile.d/conda.sh
+    conda activate netzoopy
+    R --slave -e 'install.packages("BiocManager")'
+    R --slave -e 'BiocManager::install("scran")'
+    R --slave -e 'BiocManager::install("edgeR")'
+    R --slave -e 'BiocManager::install("MAST")'
+    R --slave -e 'BiocManager::install("fgsea")'
+    R --slave -e 'install.packages("remotes")'
+    R --slave -e 'remotes::install_github("zhangyuqing/sva-devel")'
+    R --slave -e 'remotes::install_github("thomasp85/patchwork")'
+    R --slave -e 'remotes::install_github("chris-mcginnis-ucsf/DoubletFinder")'
+    R --slave -e 'remotes::install_github("powellgenomicslab/scPred")'
+    R --slave -e 'install.packages("Matrix")'
+    R --slave -e 'install.packages("tidyverse")'
+    R --slave -e 'install.packages("reticulate")'
+    R --slave -e 'install.packages("harmony")'
+    R --slave -e 'install.packages("Seurat")'
+    R --slave -e 'install.packages("pheatmap")'
+    R --slave -e 'install.packages("clustree")'
+    R --slave -e 'install.packages("enrichR")'
+    R --slave -e 'install.packages("lme4")'
+    R --slave -e 'install.packages("msigdbr")'    
+    R --slave -e 'install.packages("IRkernel")'
+    R -e "IRkernel::installspec(user = FALSE)"
+    
+
+%environment
+    export SINGULARITY_SHELL=/bin/bash
