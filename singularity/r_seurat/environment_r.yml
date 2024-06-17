@@ -1,0 +1,139 @@
+name: r_seurat
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+
+  - blas
+  - bottleneck
+  - brotli
+  - brotli-bin
+  - bzip2
+  - ca-certificates
+  - contourpy
+  - cycler
+  - fonttools
+  - freetype
+  - giflib
+  - jpeg
+  - kiwisolver
+  - lcms2
+  - lerc
+  - libbrotlicommon
+  - libbrotlidec
+  - libbrotlienc
+  - libcxx
+  - libdeflate
+  - libffi
+  - libpng
+  - libtiff
+  - libwebp
+  - libwebp-base
+  - lz4-c
+  - matplotlib
+  - matplotlib-base
+  - mkl
+  - mkl-service
+  - mkl_fft
+  - mkl_random
+  - munkres
+  - ncurses
+  - numexpr
+  - numpy
+  - openssl
+  - packaging
+  - pandas
+  - pillow
+  - pip
+  - pyparsing
+  - python
+  - python-dateutil
+  - python-tzdata
+  - pytz
+  - readline
+  - seaborn
+  - setuptools
+  - six
+  - sqlite
+  - tbb
+  - tk
+  - tornado
+  - tzdata
+  - wheel
+  - xz
+  - zlib
+  - zstd
+  ## R core
+  - r-base=4.0  # always give version
+  - r-irkernel  # jupyter interop
+
+  ## CRAN packages
+  - r-tidyverse
+  - r-pheatmap
+  - r-biocmanager
+  - r-remotes
+  - r-matrix
+  - r-reticulate
+  - r-harmony
+  - r-seurat
+  - r-spatstat
+  - r-seuratdisk
+  - r-pheatmap
+  - r-clustree
+  - r-enrichr
+  - r-lme4
+  - r-harmony
+  - r-lmerTest
+  - r-jtools
+  - r-corrplot
+  - r-devtools
+  - r-roxygen2
+  - r-devtools
+
+
+  ## Bioconductor packages
+  - bioconductor-deseq2
+  - bioconductor-mast
+  - bioconductor-edger
+  - bioconductor-fgsea
+  - bioconductor-scran
+  - bioconductor-tximport
+  - pip:
+      - py-cpuinfo
+      - networkx
+      - msgpack
+      - igraph
+      - cython
+      - click
+      - python-igraph
+      - blosc2
+      - tables    
+      - pydeseq2
+      - cmake
+      - texttable
+      - igraph
+      - tqdm
+      - notebook
+      - plotly
+      - goatools
+      - mygene
+      - scipy
+      - rnanorm
+      - gseapy
+      - biomart
+
+
+
+post-build:
+  - R -e 'remotes::install_github(c("zhangyuqing/sva-devel", "thomasp85/patchwork", "chris-mcginnis-ucsf/DoubletFinder", "powellgenomicslab/scPred"))'
+  - R -e "remotes::install_github('cran/ggplot2')"
+  - R -e "devtools::install_github("zhangyuqing/sva-devel")"
+  - R -e 'IRkernel::installspec(user = FALSE)'
+
+prefix: /Users/anwer/miniconda/envs/r_seurat
+
+
+  
+
+  
