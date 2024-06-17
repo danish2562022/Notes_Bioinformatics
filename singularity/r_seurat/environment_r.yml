@@ -90,6 +90,9 @@ dependencies:
   - r-devtools
   - r-roxygen2
   - r-devtools
+  - r-scpred
+  - r-ggplot2
+  - r-patchwork
 
 
   ## Bioconductor packages
@@ -99,6 +102,13 @@ dependencies:
   - bioconductor-fgsea
   - bioconductor-scran
   - bioconductor-tximport
+  
+  ## Remotes Packages
+  ##- r-sva-devel
+  ##- r-doubletfinder
+  ##- r-ggplot2
+  ##- r-patchwork
+  
   - pip:
       - py-cpuinfo
       - networkx
@@ -126,9 +136,7 @@ dependencies:
 
 
 post-build:
-  - R -e 'remotes::install_github(c("zhangyuqing/sva-devel", "thomasp85/patchwork", "chris-mcginnis-ucsf/DoubletFinder", "powellgenomicslab/scPred"))'
-  - R -e "remotes::install_github('cran/ggplot2')"
-  - R -e "devtools::install_github("zhangyuqing/sva-devel")"
+ 
   - R -e 'IRkernel::installspec(user = FALSE)'
 
 prefix: /Users/anwer/miniconda/envs/r_seurat

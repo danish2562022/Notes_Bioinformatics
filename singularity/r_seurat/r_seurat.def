@@ -18,6 +18,8 @@ From: continuumio/miniconda3
     echo "conda activate $(head -n 1 environment_r.yml | cut -f 2 -d ' ')" >> /etc/bash.bashrc
     . /opt/conda/etc/profile.d/conda.sh
     conda activate r_seurat
+    R -e 'remotes::install_github(c("zhangyuqing/sva-devel", "thomasp85/patchwork", "chris-mcginnis-ucsf/DoubletFinder"))'
+   
     
         
 %environment
