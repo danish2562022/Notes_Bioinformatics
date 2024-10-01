@@ -68,15 +68,17 @@ srun -A C3SE2024-1-20 -p vera -t 14:20:00 -C MEM96 --mem-per-cpu=96G --pty bash
 
 	8a) Node to Alvis: 
 
-	open new terminal from your computer and connect to alvis, then do this: ssh -N -L 8888:localhost:8888 user-name@alvisX-X
+	open new terminal from your computer and connect to alvis, then do this:
+```
+	 ssh -N -L 8888:localhost:8888 user-name@alvisX-X
+```
+8b) Alvis to your computer:
 
-	8b) Alvis to your computer:
-
-	open a new terminal from your computer and do:
+open a new terminal from your computer and do:
     ```
 	ssh -N -L 6543:localhost:8888 user-name@alvis2.c3se.chalmers.se (6543 is an arbitrary port that you can change)
     ```
-9) Get Jupyter notebook on your screen:
+10) Get Jupyter notebook on your screen:
 
 	open a new tab on your browser and do this:
 	http://localhost:6543/ 
